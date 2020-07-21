@@ -12,8 +12,6 @@ RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
-RUN add-apt-repository -y ppa:deadsnakes/ppa \
-
     # NodeJS
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
     && apt -y install nodejs
@@ -27,7 +25,10 @@ RUN add-apt-repository -y ppa:ondrej/php \
 RUN apt -y install openjdk-8-jdk
 
     # Python 2 & 3
-RUN apt -y install python python3 python3.7
+    
+RUN add-apt-repository -y ppa:deadsnakes/ppa \
+    && apt update \
+    && apt -y install python python3 python3.7
 
     # C Sharp & .NET
 RUN apt -y install mono-runtime
