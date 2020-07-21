@@ -24,7 +24,7 @@ RUN add-apt-repository -y ppa:ondrej/php \
     # OpenJDK 8
 RUN apt -y install openjdk-8-jdk
 
-    # Python 2 & 3
+    # Python 2 & 3 & 3.7
     
 RUN add-apt-repository -y ppa:deadsnakes/ppa \
     && apt update \
