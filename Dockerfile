@@ -12,7 +12,7 @@ RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
-RUN add-apt-repository ppa:deadsnakes/ppa
+RUN add-apt-repository -y ppa:deadsnakes/ppa \
 
     # NodeJS
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
